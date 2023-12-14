@@ -15,6 +15,9 @@
     "start": "web-dev-server"
   },
   "dependencies": {
+    "@lrnwebcomponents/accent-card": "^7.0.18",
+    "@lrnwebcomponents/meme-maker": "^7.0.18",
+    "@shreya.nk/polaris-chip": "^0.0.0",
     "lit": "^2.0.2"
   },
   "devDependencies": {

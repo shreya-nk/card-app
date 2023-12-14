@@ -1,5 +1,7 @@
 import { LitElement, html, css } from 'lit';
-
+import "@lrnwebcomponents/meme-maker/meme-maker.js";
+import "@lrnwebcomponents/accent-card/accent-card.js";
+import "@shreya.nk/polaris-chip/polaris-chip.js";
 export class PolarisChip extends LitElement {
   static get properties() {
     return {
