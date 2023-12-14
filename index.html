@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Put your description here.">
+  <base href="/">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #ededed;
+    }
+  </style>
+  <title>polaris-chip</title>
+</head>
+
+<body>
+  <div class="buttons">
+    <button id="background">Change Background</button>
+      <button id="duplicate" class="dup">Duplicate</button>
+    <button id="title">Change Title</button>
+    <button id="delete">Delete Clone</button>
+  </div>
+  <div id="app">
+    <polaris-chip title="sheetz"></polaris-chip>
+  </div>
+
+  <script type="module" src="./src/polaris-chip.js"></script>
+  <script> 
+
+  document.querySelector("#duplicate").addEventListener("click", function (e) {
+  const clone = document.querySelector('polaris-chip').cloneNode();
+  document.querySelector('#app').appendChild(clone);
+
+});
+
+document.querySelector("#background").addEventListener("click", function (e) {
+  const c = document.querySelector(".card");
+  if (c.classList.contains("background")) {
+    c.classList.remove("background");
+  } else {
+    c.classList.add("background");
+  }
+  
+});
+
+document.querySelector("#title").addEventListener("click", function (e) {
+  let name = prompt("Change Name: ")
+  if (name) {
+    document.querySelector('polaris-chip').shadowRoot.querySelector('.card h1').innerText = name;
+  }
+});
+
+    document.querySelector('#delete').addEventListener('click', function(e)  {
+      if(document.querySelector('#app :last-child') !== document.querySelector('polaris-chip')){
+        document.querySelector('#app :last-child').remove();
+      }
+
+    });
+  </script>
+</body>
+
+</html>
